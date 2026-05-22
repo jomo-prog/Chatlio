@@ -1,0 +1,713 @@
+/* GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1e1e1e;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 80px;
+
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    height: 70px;
+}
+
+.Logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.nav-links li:hover {
+    color: #2563eb;
+}
+
+.login-btn {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    max-width: 800px;
+
+    margin-bottom: 20px;
+
+    color: #111827;
+}
+
+.hero p {
+    font-size: 1.2rem;
+
+    color: #4b5563;
+
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.hero button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.app-footer {
+    background-color: #111827;
+    color: white;
+
+    padding: 60px 80px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 40px;
+}
+
+.footer-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+}
+
+.footer-section h5 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    cursor: pointer;
+}
+
+.footer-section li:hover {
+    color: white;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+
+    border-top: 1px solid #374151;
+
+    margin-top: 20px;
+    padding-top: 20px;
+
+    text-align: center;
+
+    color: #9ca3af;
+}
+
+/* =========================
+   REGISTER PAGE
+========================= */
+
+.register-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f7fb;
+
+    padding: 20px;
+}
+
+/* =========================
+   REGISTER FORM
+========================= */
+
+.register-form {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* FORM TITLE */
+
+.register-form h1 {
+    text-align: center;
+
+    font-size: 2rem;
+
+    color: #111827;
+
+    margin-bottom: 10px;
+}
+
+/* INPUTS */
+
+.register-form input {
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.register-form input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* BUTTON */
+
+.register-form button {
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.register-form button:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+/* LOGIN SWITCH */
+
+.auth-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 10px;
+
+    font-size: 0.95rem;
+}
+
+.auth-switch span {
+    color: #6b7280;
+}
+
+.login-link {
+    background: none;
+    border: none;
+
+    color: #2563eb;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    padding: 0;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f7fb;
+
+    padding: 20px;
+}
+
+/* PAGE TITLE */
+
+.login-page h2 {
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+
+    color: #111827;
+}
+
+/* =========================
+   LOGIN FORM
+========================= */
+
+.login-form {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* INPUTS */
+
+.login-form input {
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.login-form input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* BUTTON */
+
+.login-form button {
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.login-form button:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+/* SIDEBAR CONTAINER */
+.Sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #111827;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 0;
+
+    border-right: 1px solid #1f2937;
+}
+
+/* SIDEBAR HEADER */
+.sidebar-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding: 0 24px 20px;
+
+    border-bottom: 1px solid #1f2937;
+
+    margin-bottom: 20px;
+}
+
+/* NAVIGATION */
+.sidebar-navlinks {
+    flex: 1;
+}
+
+/* REMOVE BULLETS */
+.sidebar-navlinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* EACH MENU ITEM */
+.sidebar-navlinks li {
+    padding: 14px 24px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.sidebar-navlinks li:hover {
+    background-color: #1f2937;
+}
+
+/* ACTIVE LOOK (optional later) */
+.sidebar-navlinks li.active {
+    background-color: #2563eb;
+}
+
+.chat-page{
+    display: flex;
+    height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.Sidebar{
+    width: 240px;
+    background-color: #172338;
+    color: white;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+
+/* CHAT WINDOW */
+
+.chatwindow{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #eef1f6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.chat-header{
+    padding: 20px;
+    border-bottom: 1px solid #d6d9df;
+    background-color: #eef1f6;
+}
+
+.chat-header h3{
+    margin: 0;
+    font-size: 28px;
+}
+
+.chat-header p{
+    margin-top: 6px;
+    color: gray;
+}
+
+
+/* MESSAGES AREA */
+
+.chat-messages{
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+
+/* MESSAGE */
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.message.received{
+    align-items: flex-start;
+}
+
+.message.sent{
+    align-items: flex-end;
+}
+
+
+/* MESSAGE BUBBLE */
+
+.message-bubble{
+    max-width: 320px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    line-height: 1.4;
+}
+
+
+/* RECEIVED */
+
+.message.received .message-bubble{
+    background-color: white;
+    color: #222;
+    border-top-left-radius: 5px;
+}
+
+
+/* SENT */
+
+.message.sent .message-bubble{
+    background-color: #2563eb;
+    color: white;
+    border-top-right-radius: 5px;
+}
+
+
+/* TIME */
+
+.message-time{
+    font-size: 12px;
+    color: gray;
+    margin-top: 4px;
+}
+
+
+/* INPUT AREA */
+
+.chat-input-area{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border-top: 1px solid #d6d9df;
+    background-color: white;
+}
+
+
+/* INPUT */
+
+.chat-input-area input{
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+}
+
+
+/* BUTTON */
+
+.chat-input-area button{
+    padding: 12px 22px;
+    border: none;
+    border-radius: 30px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-input-area button:hover{
+    background-color: #1e4fd6;
+}
+
+.chat-navbar{
+    height: 70px;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-navbar-logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* RIGHT SECTION */
+
+.chat-navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* AVATAR */
+
+.profile-avatar{
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #2563eb;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 18px;
+
+    overflow: hidden;
+}
+
+.profile-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MENU */
+
+.chat-navbar-menu{
+    position: relative;
+}
+
+.hamburger-btn{
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 45px;
+    right: 0;
+
+    width: 180px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    overflow: hidden;
+}
+
+.dropdown-menu p{
+    padding: 14px 18px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.dropdown-menu p:hover{
+    background-color: #f3f4f6;
+}

@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: npx create-db
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password     String
+  userTag      String   @unique
+  profileImage String?
+  createdAt    DateTime @default(now())
+
+  chatMembers ChatMember[]
+  messages    Message[]
+}
+
+model Chat {
+  id Int @id @default(autoincrement())
+
+  // "direct" for 1-on-1 chats, "group" for group chats
+  type String @default("direct")
+
+  name  String?
+  image String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  members  ChatMember[]
+  messages Message[]
+}
+
+model ChatMember {
+  id Int @id @default(autoincrement())
+
+  chatId Int
+  userId Int
+
+  role     String   @default("member") // member, admin, owner
+  joinedAt DateTime @default(now())
+
+  chat Chat @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([chatId, userId])
+}
+
+model Message {
+  id Int @id @default(autoincrement())
+
+  chatId   Int
+  senderId Int
+
+  content  String?
+  imageUrl String?
+  fileUrl  String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  chat   Chat @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  sender user @relation(fields: [senderId], references: [id], onDelete: Cascade)
+}
