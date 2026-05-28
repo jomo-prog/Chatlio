@@ -31,7 +31,7 @@ const getChatMessageService = async ({ chatId, userId }) => {
       sender: {
         select: {
           id: true,
-          userName: true,
+          username: true,
           userTag: true,
           profileImage: true,
         },
@@ -74,7 +74,7 @@ const getMyChatService = async ({ userId }) => {
             select: {
               id: true,
               userTag: true,
-              userName: true,
+              username: true,
               profileImage: true,
             },
           },

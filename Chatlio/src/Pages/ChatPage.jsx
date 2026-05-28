@@ -2,12 +2,13 @@ import { useNavigate } from "react-router-dom";
 import ChatWindow from "../Components/ChatWindow";
 import Sidebar from "../Components/Sidebar";
 import ChatNavbar from "../components/ChatNav-Bar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 
 function ChatPage() {
   const navigate = useNavigate();
+  const [selectedChat, setSelectedChat] = useState(null);
 
   useEffect(() => {
     async function checkAuth() {
@@ -48,8 +49,11 @@ function ChatPage() {
       <ChatNavbar />
 
       <div className="chat-page">
-        <Sidebar />
-        <ChatWindow />
+        <Sidebar 
+        selectedChat={selectedChat}
+        onSelectChat={setSelectedChat}/>
+        <ChatWindow 
+        selectedChat={selectedChat} />
       </div>
     </>
    );

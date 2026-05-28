@@ -52,48 +52,40 @@ export const sendMessage = async (req, res) => {
   }
 };
 
-export const getMyChats = async (req,res) => {
-  try{
+export const getMyChats = async (req, res) => {
+  try {
     const userId = req.user.id;
 
-
-    const messages = await getMyChatService ({
-      userId    
-
+    const chats = await getMyChatService({
+      userId,
     });
 
     res.status(200).json({
-      messages,
+      chats,
     });
-
-  }catch (error) {
+  } catch (error) {
     res.status(500).json({
       message: error.message || "failed to fetch messages",
     });
-
-  
-
   }
-
 };
 
-export const  getChatMessages = async (req,res) => {
-  try{
+export const getChatMessages = async (req, res) => {
+  try {
     const userId = req.user.id;
     const chatId = Number(req.params.chatId);
 
-
-    const messages = await getChatMessageService ({
+    const messages = await getChatMessageService({
       userId,
-      chatId
+      chatId,
     });
 
     res.status(200).json({
       messages,
     });
-  }catch (error) {
+  } catch (error) {
     res.status(500).json({
       message: error.message || "failed to fetch messages",
     });
   }
-}
+};

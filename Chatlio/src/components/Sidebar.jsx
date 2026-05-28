@@ -28,6 +28,7 @@ function Sidebar ({selectedChat, onSelectChat}) {
     }
 
     const data = await response.json();
+    console.log("chats response", data);
 
     if (!response.ok) {
         alert (data.message || "failed to fetch chats");
@@ -36,7 +37,7 @@ function Sidebar ({selectedChat, onSelectChat}) {
        
     }
 
-     setChats(data.chats);
+     setChats(data.chats || []);
 
 
 
@@ -65,15 +66,15 @@ function Sidebar ({selectedChat, onSelectChat}) {
 
         
   
- function getLastMessage () {
-    const lastMessage = chats.messages?.[0];
+ function getLastMessage(chat) {
+  const lastMessage = chat.messages?.[0];
 
-    if (!lastMessage) {
-        return "no messages yet"
-    }
+  if (!lastMessage) {
+    return "no messages yet";
+  }
 
-    return lastMessage.content || "Attachment";
- }  
+  return lastMessage.content || "Attachment";
+}
     return (    
             
             <aside className = "Sidebar">
